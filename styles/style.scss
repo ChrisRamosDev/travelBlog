@@ -43,32 +43,30 @@ p {
   line-height: 1.75;
 }
 
-//
+// image overlays
+.header::before,
+.break_image::before {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+}
+
 .header {
   position: relative;
   height: 20em;
-  background: url(../images/traveler-hero_750.jpg) rgb(49, 138, 71);
-  background-position: center;
-
-  &::before {
-    content: '';
-    position: absolute;
-    display: block;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.2);
-  }
+  background: url(../images/traveler-hero_750.jpg) rgb(49, 138, 71) center;
 
   @media ($mq-medium) {
     height: 30em;
-    background: url(../images/traveler-hero_1100.jpg) rgb(49, 138, 71);
-    background-position: center;
+    background: url(../images/traveler-hero_1100.jpg) rgb(49, 138, 71) center;
   }
   @media ($mq-large) {
     height: 40em;
-    background: url(../images/simon-migaj.jpg) rgb(49, 138, 71);
-    background-position: center;
+    background: url(../images/simon-migaj.jpg) rgb(49, 138, 71) center;
   }
 }
 
@@ -216,7 +214,7 @@ p {
   content: '';
   display: block;
   width: 100%;
-  height: 290px;
+  max-height: 360px;
   background-color: #bbb;
   border-bottom: 1px solid #000;
 }
@@ -256,10 +254,12 @@ p {
   padding: 5em 0 5em;
 }
 .break_image {
+  position: relative;
   content: '';
   display: block;
   width: 100%;
   height: 300px;
+  background: url(../images/luca-baggio.jpg);
   background-color: rgb(47, 125, 131);
   text-align: center;
 }
@@ -271,6 +271,7 @@ p {
 
 .break_quote,
 .break_quote-cite {
+  position: relative;
   color: #fff;
 }
 
@@ -320,11 +321,42 @@ p {
 }
 
 .footer_image {
-  content: '';
-  display: block;
   width: 100%;
   height: 500px;
+  background: url(../images/pushkaraj-deshpande_dubai_750.jpg) center;
   background-color: rgb(47, 125, 131);
+
+  &::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0.95) 15%,
+        rgba(255, 255, 255, 0.7) 45%,
+        rgba(255, 255, 255, 0) 100%
+      ),
+      linear-gradient(
+        to bottom right,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0.2) 20%,
+        rgba(255, 255, 255, 0) 100%
+      );
+  }
+
+  @media ($mq-medium) {
+    background: url(../images/pushkaraj-deshpande_dubai_1100.jpg);
+    background-position: center top 10%;
+    background-color: rgb(47, 125, 131);
+  }
+
+  @media ($mq-large) {
+    background: url(../images/pushkaraj-deshpande_dubai.jpg);
+    background-position: center top 30%;
+    background-color: rgb(47, 125, 131);
+  }
 }
 
 .footer_info {

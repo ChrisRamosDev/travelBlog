@@ -38,14 +38,8 @@ p {
   line-height: 1.75;
 }
 
-.header {
-  position: relative;
-  height: 20em;
-  background: url(../images/traveler-hero_750.jpg) #318a47;
-  background-position: center;
-}
-
-.header::before {
+.header::before,
+.break_image::before {
   content: '';
   position: absolute;
   display: block;
@@ -55,19 +49,23 @@ p {
   background: rgba(0, 0, 0, 0.2);
 }
 
+.header {
+  position: relative;
+  height: 20em;
+  background: url(../images/traveler-hero_750.jpg) #318a47 center;
+}
+
 @media (min-width: 750px) and (max-width: 1099px) {
   .header {
     height: 30em;
-    background: url(../images/traveler-hero_1100.jpg) #318a47;
-    background-position: center;
+    background: url(../images/traveler-hero_1100.jpg) #318a47 center;
   }
 }
 
 @media (min-width: 1100px) {
   .header {
     height: 40em;
-    background: url(../images/simon-migaj.jpg) #318a47;
-    background-position: center;
+    background: url(../images/simon-migaj.jpg) #318a47 center;
   }
 }
 
@@ -236,7 +234,7 @@ p {
   content: '';
   display: block;
   width: 100%;
-  height: 290px;
+  max-height: 360px;
   background-color: #bbb;
   border-bottom: 1px solid #000;
 }
@@ -279,10 +277,12 @@ p {
 }
 
 .break_image {
+  position: relative;
   content: '';
   display: block;
   width: 100%;
   height: 300px;
+  background: url(../images/luca-baggio.jpg);
   background-color: #2f7d83;
   text-align: center;
 }
@@ -294,6 +294,7 @@ p {
 
 .break_quote,
 .break_quote-cite {
+  position: relative;
   color: #fff;
 }
 
@@ -344,11 +345,35 @@ p {
 }
 
 .footer_image {
+  width: 100%;
+  height: 500px;
+  background: url(../images/pushkaraj-deshpande_dubai_750.jpg) center;
+  background-color: #2f7d83;
+}
+
+.footer_image::before {
   content: '';
   display: block;
   width: 100%;
-  height: 500px;
-  background-color: #2f7d83;
+  height: 50%;
+  background: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(15%, rgba(255, 255, 255, 0.95)), color-stop(45%, rgba(255, 255, 255, 0.7)), to(rgba(255, 255, 255, 0))), -webkit-gradient(linear, left top, right bottom, from(white), color-stop(20%, rgba(255, 255, 255, 0.2)), to(rgba(255, 255, 255, 0)));
+  background: linear-gradient(to bottom, white 0%, rgba(255, 255, 255, 0.95) 15%, rgba(255, 255, 255, 0.7) 45%, rgba(255, 255, 255, 0) 100%), linear-gradient(to bottom right, white 0%, rgba(255, 255, 255, 0.2) 20%, rgba(255, 255, 255, 0) 100%);
+}
+
+@media (min-width: 750px) and (max-width: 1099px) {
+  .footer_image {
+    background: url(../images/pushkaraj-deshpande_dubai_1100.jpg);
+    background-position: center top 10%;
+    background-color: #2f7d83;
+  }
+}
+
+@media (min-width: 1100px) {
+  .footer_image {
+    background: url(../images/pushkaraj-deshpande_dubai.jpg);
+    background-position: center top 30%;
+    background-color: #2f7d83;
+  }
 }
 
 .footer_info {
