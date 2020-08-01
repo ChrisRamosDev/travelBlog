@@ -1,0 +1,22 @@
+{
+  "name": "newSite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Christopher Ramos <Cramos7114@gmail.com> (https://www.chrisramosdev.com/)",
+  "license": "ISC",
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true,
+    "endOfLine": "crlf"
+  },
+  "dependencies": {
+    "sass-mq-build": "^1.0.0"
+  }
+}
